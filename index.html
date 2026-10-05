@@ -1,0 +1,1333 @@
+<!DOCTYPE html><html lang="en"><head><meta name="x-poe-datastore-behavior" content="local_only"><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>United 10, LLC | Corporate Information</title>
+
+    <meta name="description" content="Official corporate information for United 10, LLC, a Delaware limited liability company registered to conduct business in Florida.">
+
+    <meta name="robots" content="index, follow">
+
+    <style>
+        :root {
+            --primary: #102a43;
+            --primary-light: #1d4f73;
+            --accent: #c8963e;
+            --accent-dark: #9e7129;
+            --background: #f4f7fa;
+            --surface: #ffffff;
+            --text: #172b3a;
+            --text-light: #5d6d78;
+            --border: #dce5ec;
+            --success: #1f7a4d;
+            --shadow: 0 16px 40px rgba(16, 42, 67, 0.09);
+            --radius: 18px;
+            --container: 1160px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family:
+                Inter,
+                ui-sans-serif,
+                system-ui,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                sans-serif;
+            color: var(--text);
+            background: var(--background);
+            line-height: 1.65;
+        }
+
+        body.menu-open {
+            overflow: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button,
+        a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .container {
+            width: min(calc(100% - 40px), var(--container));
+            margin-inline: auto;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 20px;
+            z-index: 9999;
+            padding: 12px 18px;
+            color: #fff;
+            background: var(--primary);
+            border-radius: 8px;
+        }
+
+        .skip-link:focus {
+            top: 20px;
+        }
+
+        /* Header */
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.96);
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(14px);
+        }
+
+        .header-inner {
+            min-height: 78px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-mark {
+            width: 44px;
+            height: 44px;
+            display: grid;
+            place-items: center;
+            color: #fff;
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--primary),
+                    var(--primary-light)
+                );
+            border-radius: 12px;
+            font-size: 17px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            box-shadow: 0 8px 20px rgba(16, 42, 67, 0.22);
+        }
+
+        .brand-text strong {
+            display: block;
+            font-size: 18px;
+            line-height: 1.2;
+        }
+
+        .brand-text span {
+            display: block;
+            margin-top: 2px;
+            color: var(--text-light);
+            font-size: 12px;
+        }
+
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .main-nav a {
+            position: relative;
+            color: #344b5b;
+            font-size: 14px;
+            font-weight: 650;
+        }
+
+        .main-nav a:not(.nav-button)::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            bottom: -8px;
+            left: 0;
+            height: 2px;
+            background: var(--accent);
+            transform: scaleX(0);
+            transition: transform 0.2s ease;
+        }
+
+        .main-nav a:hover::after,
+        .main-nav a:focus-visible::after {
+            transform: scaleX(1);
+        }
+
+        .nav-button {
+            padding: 11px 18px;
+            color: #fff !important;
+            background: var(--primary);
+            border-radius: 10px;
+            transition:
+                background 0.2s ease,
+                transform 0.2s ease;
+        }
+
+        .nav-button:hover {
+            background: var(--primary-light);
+            transform: translateY(-1px);
+        }
+
+        .menu-button {
+            display: none;
+            width: 44px;
+            height: 44px;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .menu-button span,
+        .menu-button span::before,
+        .menu-button span::after {
+            width: 20px;
+            height: 2px;
+            display: block;
+            position: relative;
+            background: var(--primary);
+            transition: transform 0.2s ease;
+        }
+
+        .menu-button span::before,
+        .menu-button span::after {
+            content: "";
+            position: absolute;
+            left: 0;
+        }
+
+        .menu-button span::before {
+            top: -6px;
+        }
+
+        .menu-button span::after {
+            top: 6px;
+        }
+
+        /* Hero */
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+            padding: 105px 0 90px;
+            color: #fff;
+            background:
+                radial-gradient(
+                    circle at 78% 20%,
+                    rgba(200, 150, 62, 0.24),
+                    transparent 27%
+                ),
+                linear-gradient(
+                    135deg,
+                    #0b2032 0%,
+                    #133c59 55%,
+                    #1c587d 100%
+                );
+        }
+
+        .hero::before,
+        .hero::after {
+            content: "";
+            position: absolute;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+        }
+
+        .hero::before {
+            width: 520px;
+            height: 520px;
+            top: -250px;
+            right: -110px;
+        }
+
+        .hero::after {
+            width: 330px;
+            height: 330px;
+            right: 120px;
+            bottom: -240px;
+        }
+
+        .hero-grid {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            align-items: center;
+            gap: 70px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            margin-bottom: 24px;
+            color: #f1d59b;
+            font-size: 13px;
+            font-weight: 750;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 28px;
+            height: 2px;
+            background: var(--accent);
+        }
+
+        .hero h1 {
+            max-width: 760px;
+            margin-bottom: 25px;
+            font-size: clamp(42px, 6vw, 72px);
+            line-height: 1.03;
+            letter-spacing: -3px;
+        }
+
+        .hero-description {
+            max-width: 680px;
+            color: rgba(255, 255, 255, 0.78);
+            font-size: 18px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 36px;
+        }
+
+        .button {
+            min-height: 50px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 22px;
+            border: 1px solid transparent;
+            border-radius: 11px;
+            font-size: 14px;
+            font-weight: 750;
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease,
+                border-color 0.2s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+        }
+
+        .button-primary {
+            color: #142332;
+            background: var(--accent);
+        }
+
+        .button-primary:hover {
+            background: #d7a84f;
+        }
+
+        .button-secondary {
+            color: #fff;
+            border-color: rgba(255, 255, 255, 0.38);
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .button-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .hero-card {
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.09);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: var(--radius);
+            box-shadow: 0 24px 70px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .status {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 24px;
+            padding: 7px 11px;
+            color: #bff2d6;
+            background: rgba(31, 122, 77, 0.22);
+            border: 1px solid rgba(140, 238, 183, 0.22);
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 750;
+            text-transform: uppercase;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: #73dfa5;
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px rgba(115, 223, 165, 0.12);
+        }
+
+        .hero-detail {
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .hero-detail:last-child {
+            padding-bottom: 0;
+            border-bottom: 0;
+        }
+
+        .hero-detail span {
+            display: block;
+            margin-bottom: 3px;
+            color: rgba(255, 255, 255, 0.55);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.7px;
+        }
+
+        .hero-detail strong {
+            display: block;
+            font-size: 16px;
+            font-weight: 650;
+        }
+
+        /* Sections */
+
+        .section {
+            padding: 90px 0;
+        }
+
+        .section-white {
+            background: var(--surface);
+        }
+
+        .section-heading {
+            max-width: 720px;
+            margin-bottom: 46px;
+        }
+
+        .section-heading.centered {
+            margin-inline: auto;
+            text-align: center;
+        }
+
+        .section-label {
+            display: block;
+            margin-bottom: 13px;
+            color: var(--accent-dark);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+        }
+
+        .section-heading h2 {
+            margin-bottom: 17px;
+            color: var(--primary);
+            font-size: clamp(31px, 4vw, 45px);
+            line-height: 1.12;
+            letter-spacing: -1.5px;
+        }
+
+        .section-heading p {
+            color: var(--text-light);
+            font-size: 17px;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 70px;
+            align-items: start;
+        }
+
+        .about-highlight {
+            padding: 35px;
+            color: #fff;
+            background: var(--primary);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .about-highlight .large-number {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--accent);
+            font-size: 52px;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .about-highlight h3 {
+            margin-bottom: 12px;
+            font-size: 22px;
+        }
+
+        .about-highlight p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .about-content p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+            font-size: 17px;
+        }
+
+        .notice {
+            margin-top: 28px;
+            padding: 20px 22px;
+            background: #fff9ed;
+            border: 1px solid #ecd9b0;
+            border-left: 4px solid var(--accent);
+            border-radius: 10px;
+        }
+
+        .notice strong {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+
+        .notice p {
+            margin: 0;
+            color: #63583f;
+            font-size: 14px;
+        }
+
+        /* Corporate records */
+
+        .records-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .record-card {
+            padding: 27px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            box-shadow: 0 8px 28px rgba(16, 42, 67, 0.045);
+            transition:
+                transform 0.2s ease,
+                border-color 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+        .record-card:hover {
+            border-color: #bdccd7;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .record-card span {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-light);
+            font-size: 12px;
+            font-weight: 750;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+        }
+
+        .record-card strong {
+            display: block;
+            color: var(--primary);
+            font-size: 18px;
+            line-height: 1.45;
+        }
+
+        .record-card address {
+            color: var(--primary);
+            font-style: normal;
+            font-size: 17px;
+            font-weight: 650;
+            line-height: 1.55;
+        }
+
+        /* Governance */
+
+        .governance-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .person-card {
+            padding: 32px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+        }
+
+        .person-icon {
+            width: 50px;
+            height: 50px;
+            display: grid;
+            place-items: center;
+            margin-bottom: 22px;
+            color: #fff;
+            background: var(--primary);
+            border-radius: 13px;
+            font-weight: 800;
+        }
+
+        .person-card h3 {
+            margin-bottom: 6px;
+            color: var(--primary);
+            font-size: 21px;
+        }
+
+        .person-card .role {
+            display: block;
+            margin-bottom: 16px;
+            color: var(--accent-dark);
+            font-size: 13px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+        }
+
+        .person-card p,
+        .person-card address {
+            color: var(--text-light);
+            font-style: normal;
+        }
+
+        /* Contact */
+
+        .contact-box {
+            display: grid;
+            grid-template-columns: 1fr 0.75fr;
+            overflow: hidden;
+            color: #fff;
+            background: var(--primary);
+            border-radius: 22px;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-content {
+            padding: 55px;
+        }
+
+        .contact-content h2 {
+            margin-bottom: 18px;
+            font-size: clamp(30px, 4vw, 43px);
+            line-height: 1.12;
+        }
+
+        .contact-content p {
+            max-width: 620px;
+            color: rgba(255, 255, 255, 0.72);
+        }
+
+        .contact-address {
+            margin-top: 30px;
+            padding: 22px;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 12px;
+        }
+
+        .contact-address span {
+            display: block;
+            margin-bottom: 7px;
+            color: var(--accent);
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.9px;
+        }
+
+        .contact-address address {
+            font-style: normal;
+            font-weight: 650;
+        }
+
+        .contact-aside {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 45px;
+            color: var(--primary);
+            background: var(--accent);
+        }
+
+        .contact-aside-content {
+            max-width: 300px;
+        }
+
+        .contact-aside h3 {
+            margin-bottom: 12px;
+            font-size: 24px;
+            line-height: 1.2;
+        }
+
+        .contact-aside p {
+            color: #42371f;
+            font-size: 14px;
+        }
+
+        /* Policies */
+
+        .policy-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .policy-card {
+            padding: 30px;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+        }
+
+        .policy-card h3 {
+            margin-bottom: 13px;
+            color: var(--primary);
+            font-size: 20px;
+        }
+
+        .policy-card p {
+            margin-bottom: 12px;
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        .policy-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Footer */
+
+        .site-footer {
+            padding: 50px 0 25px;
+            color: rgba(255, 255, 255, 0.7);
+            background: #081a28;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 40px;
+            padding-bottom: 35px;
+        }
+
+        .footer-brand {
+            max-width: 520px;
+        }
+
+        .footer-brand strong {
+            display: block;
+            margin-bottom: 10px;
+            color: #fff;
+            font-size: 21px;
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: flex-end;
+            gap: 22px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.72);
+            font-size: 13px;
+            font-weight: 650;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 12px;
+        }
+
+        .footer-bottom p + p {
+            margin-top: 7px;
+        }
+
+        /* Responsive */
+
+        @media (max-width: 900px) {
+            .menu-button {
+                display: inline-flex;
+            }
+
+            .main-nav {
+                position: fixed;
+                top: 79px;
+                right: 0;
+                left: 0;
+                display: none;
+                padding: 25px 20px 32px;
+                background: #fff;
+                border-bottom: 1px solid var(--border);
+                box-shadow: 0 20px 30px rgba(16, 42, 67, 0.12);
+            }
+
+            .main-nav.open {
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+            }
+
+            .main-nav a {
+                padding: 14px 5px;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .main-nav .nav-button {
+                margin-top: 16px;
+                padding: 13px 18px;
+                text-align: center;
+                border-bottom: 0;
+            }
+
+            .hero-grid,
+            .about-grid,
+            .contact-box {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 80px 0;
+            }
+
+            .hero-grid {
+                gap: 45px;
+            }
+
+            .about-grid {
+                gap: 35px;
+            }
+
+            .contact-aside {
+                justify-content: flex-start;
+            }
+        }
+
+        @media (max-width: 680px) {
+            .container {
+                width: min(calc(100% - 28px), var(--container));
+            }
+
+            .brand-text span {
+                display: none;
+            }
+
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .section {
+                padding: 70px 0;
+            }
+
+            .records-grid,
+            .governance-grid,
+            .policy-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-content,
+            .contact-aside {
+                padding: 35px 25px;
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-links {
+                justify-content: flex-start;
+            }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "legalName": "United 10, LLC",
+        "taxID": "90-0920853",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "9900 SW 107 Ave, Suite 103",
+            "addressLocality": "Miami",
+            "addressRegion": "FL",
+            "postalCode": "33176",
+            "addressCountry": "US"
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <a class="skip-link" href="#main-content">
+        Skip to main content
+    </a>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="#home" aria-label="United 10, LLC home">
+                <span class="brand-mark" aria-hidden="true">U10</span>
+
+                <span class="brand-text">
+                    <strong>United 10, LLC</strong>
+                    <span>Corporate Information</span>
+                </span>
+            </a>
+
+            <button class="menu-button" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="main-navigation">
+                <span></span>
+            </button>
+
+            <nav class="main-nav" id="main-navigation" aria-label="Main navigation">
+                <a href="#about">About</a>
+                <a href="#company">Company Details</a>
+                <a href="#governance">Governance</a>
+                <a href="#policies">Policies</a>
+                <a class="nav-button" href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="hero" id="home">
+            <div class="container hero-grid">
+                <div>
+                    <span class="eyebrow">
+                        Established business entity
+                    </span>
+
+                    <h1>United 10, LLC</h1>
+
+                    <p class="hero-description">
+                        A Delaware limited liability company registered as a
+                        foreign limited liability company in the State of
+                        Florida. This website provides clear and accessible
+                        corporate information about the entity.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a class="button button-primary" href="#company">
+                            View company details
+                        </a>
+
+                        <a class="button button-secondary" href="#contact">
+                            Contact information
+                        </a>
+                    </div>
+                </div>
+
+                <aside class="hero-card" aria-label="Company summary">
+                    <div class="status">
+                        <span class="status-dot"></span>
+                        Active status
+                    </div>
+
+                    <div class="hero-detail">
+                        <span>Legal name</span>
+                        <strong>United 10, LLC</strong>
+                    </div>
+
+                    <div class="hero-detail">
+                        <span>Florida document number</span>
+                        <strong>M12000007058</strong>
+                    </div>
+
+                    <div class="hero-detail">
+                        <span>State of formation</span>
+                        <strong>Delaware</strong>
+                    </div>
+
+                    <div class="hero-detail">
+                        <span>Florida registration date</span>
+                        <strong>December 18, 2012</strong>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section class="section section-white" id="about">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="section-label">About the company</span>
+
+                    <h2>Transparent corporate information</h2>
+
+                    <p>
+                        United 10, LLC maintains its principal business and
+                        mailing address in Miami, Florida.
+                    </p>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-highlight">
+                        <span class="large-number">2012</span>
+
+                        <h3>Registered in Florida</h3>
+
+                        <p>
+                            United 10, LLC was registered to conduct business
+                            in Florida as a foreign limited liability company
+                            on December 18, 2012.
+                        </p>
+                    </div>
+
+                    <div class="about-content">
+                        <p>
+                            United 10, LLC is a Delaware limited liability
+                            company registered with the Florida Division of
+                            Corporations under document number M12000007058.
+                        </p>
+
+                        <p>
+                            The company’s principal address, mailing address
+                            and registered office are located at 9900 SW 107
+                            Avenue, Suite 103, Miami, Florida 33176.
+                        </p>
+
+                        <p>
+                            This website is maintained as an institutional
+                            source of company identification, corporate
+                            registration and contact information.
+                        </p>
+
+                        <div class="notice">
+                            <strong>Corporate identity notice</strong>
+
+                            <p>
+                                This website presents information concerning
+                                United 10, LLC. It does not present airline,
+                                aviation, ticketing or aircraft services.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="company">
+            <div class="container">
+                <div class="section-heading centered">
+                    <span class="section-label">Company details</span>
+
+                    <h2>Official entity information</h2>
+
+                    <p>
+                        The following details reflect the corporate
+                        information supplied for United 10, LLC.
+                    </p>
+                </div>
+
+                <div class="records-grid">
+                    <article class="record-card">
+                        <span>Legal business name</span>
+                        <strong>United 10, LLC</strong>
+                    </article>
+
+                    <article class="record-card">
+                        <span>Entity type</span>
+                        <strong>
+                            Foreign Limited Liability Company
+                        </strong>
+                    </article>
+
+                    <article class="record-card">
+                        <span>State of formation</span>
+                        <strong>Delaware</strong>
+                    </article>
+
+                    <article class="record-card">
+                        <span>Florida status</span>
+                        <strong>Active</strong>
+                    </article>
+
+                    <article class="record-card">
+                        <span>Florida document number</span>
+                        <strong>M12000007058</strong>
+                    </article>
+
+                    <article class="record-card">
+                        <span>FEI/EIN</span>
+                        <strong>90-0920853</strong>
+                    </article>
+
+                    <article class="record-card">
+                        <span>Florida filing date</span>
+                        <strong>December 18, 2012</strong>
+                    </article>
+
+                    <article class="record-card">
+                        <span>Principal and mailing address</span>
+
+                        <address>
+                            9900 SW 107 Avenue, Suite 103<br>
+                            Miami, FL 33176<br>
+                            United States
+                        </address>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-white" id="governance">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="section-label">
+                        Corporate governance
+                    </span>
+
+                    <h2>Management and registered agent</h2>
+
+                    <p>
+                        Corporate representatives identified in the supplied
+                        Florida entity records.
+                    </p>
+                </div>
+
+                <div class="governance-grid">
+                    <article class="person-card">
+                        <div class="person-icon" aria-hidden="true">M</div>
+
+                        <h3>Southern Homes Management LLC</h3>
+
+                        <span class="role">Manager</span>
+
+                        <address>
+                            9900 SW 107 Avenue, Suite 103<br>
+                            Miami, FL 33176
+                        </address>
+                    </article>
+
+                    <article class="person-card">
+                        <div class="person-icon" aria-hidden="true">RA</div>
+
+                        <h3>Gerardo Aguirre</h3>
+
+                        <span class="role">Registered Agent</span>
+
+                        <address>
+                            9900 SW 107 Avenue, Suite 103<br>
+                            Miami, FL 33176
+                        </address>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="contact">
+            <div class="container">
+                <div class="contact-box">
+                    <div class="contact-content">
+                        <span class="eyebrow">Contact information</span>
+
+                        <h2>Corporate correspondence</h2>
+
+                        <p>
+                            Corporate and legal correspondence may be sent to
+                            the company’s principal mailing address.
+                        </p>
+
+                        <div class="contact-address">
+                            <span>Mailing address</span>
+
+                            <address>
+                                United 10, LLC<br>
+                                9900 SW 107 Avenue, Suite 103<br>
+                                Miami, FL 33176<br>
+                                United States
+                            </address>
+                        </div>
+                    </div>
+
+                    <aside class="contact-aside">
+                        <div class="contact-aside-content">
+                            <h3>Business inquiries</h3>
+
+                            <p>
+                                A public telephone number and email address
+                                have not been listed on this website. Please
+                                direct written inquiries to the corporate
+                                mailing address.
+                            </p>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-white" id="policies">
+            <div class="container">
+                <div class="section-heading centered">
+                    <span class="section-label">Website policies</span>
+
+                    <h2>Privacy and terms</h2>
+
+                    <p>
+                        Basic policies applicable to this informational
+                        corporate website.
+                    </p>
+                </div>
+
+                <div class="policy-grid">
+                    <article class="policy-card" id="privacy">
+                        <h3>Privacy Policy</h3>
+
+                        <p>
+                            This informational website does not provide user
+                            accounts, payment processing, online checkout or
+                            public submission forms.
+                        </p>
+
+                        <p>
+                            The website does not intentionally request or
+                            collect personal information directly from
+                            visitors. The hosting provider may automatically
+                            process standard technical information, such as
+                            IP addresses, browser type and server logs, for
+                            security and website operation.
+                        </p>
+
+                        <p>
+                            If additional data collection features are added,
+                            this policy should be updated before those
+                            features are made available to the public.
+                        </p>
+                    </article>
+
+                    <article class="policy-card" id="terms">
+                        <h3>Terms of Use</h3>
+
+                        <p>
+                            The information on this website is provided for
+                            general corporate identification and
+                            informational purposes.
+                        </p>
+
+                        <p>
+                            Visitors may not use the company name, website or
+                            corporate information to misrepresent an
+                            affiliation, impersonate the company or engage in
+                            unlawful activity.
+                        </p>
+
+                        <p>
+                            Corporate information may be updated to reflect
+                            subsequent filings or changes in the company’s
+                            official records.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <strong>United 10, LLC</strong>
+
+                    <p>
+                        A Delaware limited liability company registered as a
+                        foreign limited liability company in Florida.
+                    </p>
+                </div>
+
+                <nav class="footer-links" aria-label="Footer navigation">
+                    <a href="#about">About</a>
+                    <a href="#company">Company Details</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#privacy">Privacy</a>
+                    <a href="#terms">Terms</a>
+                </nav>
+            </div>
+
+            <div class="footer-bottom">
+                <p>
+                    © <span id="current-year">2026</span>
+                    United 10, LLC. All rights reserved.
+                </p>
+
+                <p>
+                    Florida Document Number: M12000007058 ·
+                    FEI/EIN: 90-0920853
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuButton = document.querySelector(".menu-button");
+        const navigation = document.querySelector(".main-nav");
+        const navigationLinks = navigation.querySelectorAll("a");
+
+        menuButton.addEventListener("click", function () {
+            const isOpen = navigation.classList.toggle("open");
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                String(isOpen)
+            );
+
+            menuButton.setAttribute(
+                "aria-label",
+                isOpen ? "Close navigation" : "Open navigation"
+            );
+
+            document.body.classList.toggle("menu-open", isOpen);
+        });
+
+        navigationLinks.forEach(function (link) {
+            link.addEventListener("click", function () {
+                navigation.classList.remove("open");
+                menuButton.setAttribute("aria-expanded", "false");
+                menuButton.setAttribute(
+                    "aria-label",
+                    "Open navigation"
+                );
+                document.body.classList.remove("menu-open");
+            });
+        });
+
+        document.getElementById("current-year").textContent =
+            new Date().getFullYear();
+    </script>
+
+
+</body></html>
